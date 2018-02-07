@@ -27,6 +27,7 @@
       </div>
 
     </div>
+
     <nav class="menu">
       <button aria-expanded="false" aria-controls="menu-list">
         <span class="open">☰</span>
@@ -100,6 +101,20 @@
       <img src="https://source.unsplash.com/random/207x210" alt="">
     </section>
   </div>
+  <script type="text/javascript">
+
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({target}) {
+      console.log('TOGGLE!');
+      console.log(target);
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navButton.setAttribute('aria-expanded', !expanded);
+
+    }
+
+    navButton.addEventListener('click', toggleNav);
+  </script>
 
 </body>
 
